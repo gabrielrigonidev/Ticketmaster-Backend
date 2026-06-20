@@ -1,0 +1,58 @@
+# Maven
+target/
+.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# VS Code
+.vscode/
+
+# Eclipse / STS
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# Chaves privadas — nunca commitar em projetos reais
+*.pem
+*.key
+*.p12
+*.jks
+
+# Variáveis de ambiente e configs locais
+.env
+.env.*
+application-local.properties
+application-local.yml
+
+# Docker override local
+docker-compose.override.yml
+
+# Logs
+logs/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+ARCHITECTURE-ORIGINAL.md
+ARCHITECTURE-SPRING.md
