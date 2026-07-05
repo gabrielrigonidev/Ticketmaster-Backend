@@ -7,6 +7,7 @@ import com.ticketmaster.controller.dto.SeatDto;
 import com.ticketmaster.entity.EventEntity;
 import com.ticketmaster.entity.SeatEntity;
 import com.ticketmaster.entity.SeatStatus;
+import com.ticketmaster.exception.ResourceNotFoundException;
 import com.ticketmaster.repository.EventRepository;
 import com.ticketmaster.repository.SeatRepository;
 import org.springframework.data.domain.Page;
@@ -49,7 +50,7 @@ public class EventService {
 
     public ApiListDto<SeatDto> findAllSeats(Long eventId, int page, int pageSize) {
         EventEntity event = eventRepository.findById(eventId)
-                .orElseThrow(() -> new RuntimeException("Event not found: " + eventId));
+                .orElseThrow(() -> new ResourceNotFoundException("Event not found", "No event with id: " + eventId));
         Page<SeatEntity> result = seatRepository.findByEvent(event, PageRequest.of(page, pageSize));
         return ApiListDto.from(result, SeatDto::fromEntity);
     }
